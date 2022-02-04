@@ -1,0 +1,461 @@
+/* RESETEO PARÁMETROS*/
+*,*:before ,*:after {
+    margin:0;
+    padding:0;
+    outline:0;
+    text-decoration:none;
+    list-style:none;
+    box-sizing:border-box;
+}
+
+
+
+.enlace h1 {
+    font-family: 'Yuji Syuku', serif;
+}
+
+body {
+    width:100%;
+    height: 100vh;
+}
+
+.border{
+    width:100%;
+    
+}
+
+
+/* Nombrar cada Area */
+nav {
+    grid-area: menu;
+}
+header {
+    grid-area: introduccion;
+}
+
+#galeria {
+    grid-area: gallery;
+}
+
+footer {
+    grid-area: pie;
+}
+#derechos{
+    grid-area: derechos;
+}
+
+/* GRID POR AREA */
+#gridAreas {
+    display: grid;
+    grid-template-areas:
+    "menu menu menu"
+    "introduccion introduccion introduccion"
+    "gallery gallery gallery"
+    "pie pie pie"
+    "derechos derechos derechos";
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas*/
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; /* 5 filas*/
+    grid-column-gap:5px; /* Separacion de columnas*/
+    grid-row-gap:5px;     /* Separacion de filas*/
+}
+/***********MENU*********/
+nav{
+    background-color:black;
+    height:13vh;
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.enlace h1 {
+    color:white;
+    font-size: 2rem;
+}
+
+nav ul{
+    display:flex;
+}
+
+nav ul li {
+    border-right: solid .1rem rgba(201, 196, 196, 0.4);
+}
+
+
+
+nav li a{ 
+    color:white;
+    font-size:1.rem;
+    padding: .8rem 1rem;
+    text-transform: uppercase;
+    text-align:center;
+    cursor:pointer;
+    
+}
+
+nav li a:hover{
+    background-color: white;
+    color:black;
+    transition: all .5s;
+    border-right: solid .5rem grey;
+    
+}
+
+.drawer {  /*Este es el boton hamburger*/
+    font-size:2rem;
+    color:white;
+    float:left;
+    cursor:pointer;
+    display:none;
+    margin-left:1rem;
+    padding:-2rem;
+    
+}
+
+#ckbox{
+    display:none;
+}
+
+/*********Introduccion***************/
+#introduccion{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:20px;
+    text-decoration:underline;
+
+}
+
+/********GALERIA**************/
+
+#galeria {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5em;
+    justify-self: center;
+    width:90%;
+    
+}
+
+.articulo img{
+    width:100%;
+    border:1px solid black;
+    
+}
+
+.articulo{
+    width:100%;
+    text-align:center;
+    margin-bottom:10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+}
+
+/*************FOOTER************/
+.premios {
+    grid-area:premios;
+}
+.caja1 {
+    grid-area:caja1;
+}
+
+.caja1b {
+    grid-area:caja1b;
+}
+.caja2 {
+    grid-area:caja2;
+}
+.caja3 {
+    grid-area:caja3;
+}
+
+
+#pieContenedor{
+    display: grid;
+    background-color: black;
+    color:white;
+    width:100%;
+    height:90px;
+    justify-self: center;
+    align-self: center;
+    border:1px solid black;
+    grid-template-areas:
+    "caja1 caja1b premios caja2"
+    "caja1 caja1b premios caja3";
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+    grid-template-rows:1fr 1fr;
+    grid-column-gap:1em;
+    
+}
+.premios{
+    display:flex;
+    justify-content: left;
+    align-items: center;
+    
+    filter:invert(100);
+}
+.premio1{
+    width:130px;
+}
+
+.premio2{
+    width:95px;
+}
+
+.caja1 {
+    display:flex;
+    justify-content:center;
+    align-items: center; 
+    height:33%
+    margin-bottom 
+}
+.caja1 img{
+    width:80px;
+}
+.caja1b {
+    display:flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.caja2{
+    display:flex;
+    justify-content:start;
+    align-items: start;
+    height:10%;
+    font-size: 0.8rem;
+}
+
+.caja3{
+    display:flex;
+    justify-content:start;
+    align-items: start;
+    height:33%;
+    font-size: 0.8rem;
+}
+/**************Derechos******************/
+#derechos {
+    width:100%;
+    height:3%;
+    
+}
+#derechos p{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding: 2px 20px;
+    text-align:left;
+    background-color: #0a6ac4;
+    color:white;
+}
+
+
+
+/* Tablets */
+/*-------------
+TABLETS Break Points
+600.px
+768.px y 1023.px
+1024.px
+-------------*/
+@media screen and (min-width:600px) and (max-width:768px) {
+    body{
+        background:white;
+    }
+    /* GRID POR AREA */
+    #gridAreas {
+        display: grid;
+        grid-template-areas:
+        "menu menu menu"
+        "introduccion introduccion introduccion"
+        "gallery gallery gallery"
+        "pie pie pie"
+        "derechos derechos derechos";
+        grid-template-columns: 1fr 1fr 1fr; /* 3 columnas*/
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr; /* 5 filas*/
+        grid-column-gap:5px; /* Separacion de columnas*/
+        grid-row-gap:5px;     /* Separacion de filas*/
+    }
+    /***********MENU*********/
+    nav {
+        display:flex;
+        flex-wrap:nowrap;
+        background: black;
+        
+    }
+
+    .enlace h1 {
+        color:white;
+        font-size: 2rem;
+    }
+
+    nav ul li a{ /*estas opciones son de los enlaces del menu */
+        color:white;
+        font-size: 14px;
+        padding:5px 5px;
+        text-transform: uppercase;
+    }
+/***********Galeria*********/
+    #galeria {
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 2em;
+        justify-self: center;
+        width:90%;
+        
+        
+    }
+
+    .articulo img{
+        width:100%;
+        border:1px solid black;
+        
+    }
+
+    .articulo{
+        width:100%;
+        text-align:center;
+        margin-bottom:10px;
+        cursor: pointer;
+        box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+
+}
+
+/* Smartphone */
+/*-------------
+CELULARES Break Points
+320.px
+480.px
+-------------*/
+
+@media screen and (max-width:480px) {
+    body{
+        
+        background:white;
+        width:100%;
+        
+    }
+
+    nav {
+        justify-content: flex-start;
+    }
+    .drawer {
+        display:block;
+    }
+    nav h1{
+        margin-left: 2.5rem;
+    }
+    ul{  /*etiqueta que se desplega*/
+        position:fixed;
+        width:100vw;
+        height:100vh;
+        background-color:black;
+        top:10vh;
+        left:-100%;  /*Esconde el nav*/
+        text-align: left;
+        transition:all .5s;
+        display:flex;
+        flex-direction:column;
+        align-content: stretch;
+        padding-top:1rem;
+        
+    }
+    nav ul li {
+        padding:1rem 0;
+        display:flex;
+        flex-direction:column;
+        padding-left:2rem;
+        border-bottom:solid .1rem rgba(201, 196, 196, 0.4);
+        border-top:solid .1rem rgba(201, 196, 196, 0.4);
+
+    }
+
+    #ckbox:checked ~ .lista_menu{
+        left:0;
+    }
+
+    header h1 {
+        text-align:center;
+    }
+/****************Galeria**********************/
+    #galeria {
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        gap: 2em;
+        justify-self: center;
+        width:100%;   
+    }
+
+/****************FOOOTER**********************/
+#pieContenedor{
+    display: grid;
+    background-color: black;
+    color:white;
+    width:100%;
+    height:40vh;
+    justify-self:flex-start;
+    align-self:center;
+    border:1px solid black;
+    grid-template-areas:
+    "caja1 premios premios"
+    "caja1b caja2 caja3";
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    grid-column-gap:1em; 
+}
+
+.premios{
+    filter:invert(100);
+}
+
+.premio1{
+    width:140px;
+}
+
+.premio2{
+    width:95px;
+}
+
+.caja1 {
+    height: auto; 
+}
+.caja1 img{
+    width:70px;
+}
+    
+.caja1b{
+    font-size:0.6rem;
+    align-self:start;
+}
+.caja2{
+    height:5%;
+    font-size: 0.6rem;
+}
+
+.caja3{
+    height:10px;
+    font-size: 0.6rem;
+}
+
+
+    /**************Derechos******************/
+#derechos {
+    width:100%;
+    height:3%;
+}
+#derechos p{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    text-align:left;
+    background-color: #0a6ac4;
+    color:white;
+    font-size:0.55rem;
+}
+
+}

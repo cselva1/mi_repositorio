@@ -1,0 +1,1079 @@
+/* RESETEO PARÁMETROS*/
+*,*:before ,*:after {
+    margin:0;
+    padding:0;
+    outline:0;
+    text-decoration:none;
+    list-style:none;
+    box-sizing:border-box;
+}
+
+
+
+.enlace h1, #testimonios h2, #excursiones h2 {
+    font-family: 'Yuji Syuku', serif;
+}
+
+body {
+    background-color: white;
+    width:100%;
+    height: 100vh;
+}
+
+.border{
+    width:100%;
+    
+}
+
+/* Nombrar cada Area */
+nav {
+    grid-area: menu;
+}
+header {
+    grid-area: principal;
+}
+
+#excursiones {
+    grid-area: excur;
+}
+#contenidoExcursiones{
+    grid-area: contExcur;
+}
+#testimonios{
+    grid-area: test;
+}
+#contenidoTestimonios{
+    grid-area: contTest;
+}
+footer {
+    grid-area: pie;
+}
+#derechos{
+    grid-area: derechos;
+}
+
+/* GRID POR AREA */
+#gridAreas {
+    display: grid;
+    grid-template-areas:
+    "menu menu menu"
+    "principal principal principal"
+    "excur excur excur"
+    "contExcur contExcur contExcur"
+    "test test test"
+    "contTest contTest contTest"
+    "pie pie pie"
+    "derechos derechos derechos";
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas*/
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* 8 filas*/
+    grid-column-gap:5px; /* Separacion de columnas*/
+    grid-row-gap:5px;     /* Separacion de filas*/
+}
+/***********MENU*********/
+nav{
+    background-color:black;
+    height:13vh;
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.enlace h1 {
+    color:white;
+    font-size: 2rem;
+}
+
+nav ul{
+    display:flex;
+}
+
+nav ul li {
+    border-right: solid .1rem rgba(201, 196, 196, 0.4);
+}
+
+
+
+nav li a{ 
+    color:white;
+    font-size:1.rem;
+    padding: .8rem 1rem;
+    text-transform: uppercase;
+    text-align:center;
+    cursor:pointer;
+    
+}
+
+nav li a:hover{
+    background-color: white;
+    color:black;
+    transition: all .5s;
+    border-right: solid .5rem grey;
+    
+}
+
+.drawer {  /*Este es el boton hamburger*/
+    font-size:2rem;
+    color:white;
+    float:left;
+    cursor:pointer;
+    display:none;
+    margin-left:1rem;
+    padding:-2rem;
+    
+}
+
+#ckbox{
+    display:none;
+}
+
+
+/***********PORTADA*********/
+#principal {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:auto;
+    background-image: url(./images/invierno1.jpg);
+    /*background-size: 100%;*/
+    
+    margin-bottom:10px;
+}
+
+.principalFlex{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:600px;
+    height:400px;
+    border-radius:2%;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.50);
+    padding: 36px;
+    margin: 15px;
+    cursor: pointer;
+    color:white;
+    flex-wrap:wrap;
+}
+
+
+
+/* Excursiones */
+#excursiones h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    font-size: 2.2rem;
+    font-weight: 2.5;
+    background-color: #202020;
+    color:white;
+    padding: 10px 20px;
+}
+
+/* Testimonios */
+#testimonios h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    font-size: 2.2rem;
+    font-weight: 2.5;
+    background-color: #202020;
+    color:white;
+    padding: 10px 20px;
+}
+
+/*Contenido excursiones*/
+#contenidoExcursiones{ /*Genera que se visualice en grilla de 3x1*/
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    align-self:center;
+    justify-items: center;
+}
+
+#contenidoExcursiones {
+    width:100%;
+    height:auto;
+    
+    
+}
+
+#contenidoExcursiones img{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    object-fit: center;
+    overflow: hidden;
+    margin:auto;
+    
+    
+}
+
+#contenidoExcursiones h3 p a{
+    display: flex;
+    
+    align-items: center;
+    width: 50%;
+    height:30%;
+    
+}
+
+.contenedoresExcursiones { /*Este es el recuadro blanco que encuadra las imgs y txts*/
+    width:79%;
+    height:90%;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer;
+    text-align:center;
+}
+
+
+.btn {
+    border-radius: 5px;
+    display:inline-block;
+    padding: 5px 15px;
+    text-decoration: none;
+    margin-top: 15px;
+    text-shadow:  0 1px 0 rgba(201, 53, 70);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn-red:hover{
+    background-color: #a62d24;
+}
+
+.btn-red {
+    color:white;
+    background-color: #c9352a;
+    font-weight: 550;
+}
+
+/*Contenido Testimonios*/
+#cajaMacri {
+    grid-area:cajaMacri;
+}
+#cajaCristina {
+    grid-area:cajaCristina;
+}
+#cajaAlberto {
+    grid-area:cajaAlberto;
+}
+#cajaBarney {
+    grid-area:cajaBarney;
+}
+
+.contenidoTestimonios{ /*Genera que se visualice en grilla de 3x1*/
+    display:grid;
+    justify-self: center;
+    align-self: center;
+    width:100vw;
+    height:100%;
+    margin:0 20px;
+    grid-template-areas:"cajaMacri cajaCristina"
+                        "cajaAlberto cajaBarney";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap:1em;
+    grid-columns-gap:1em;
+    
+}
+
+
+.contenidoTestimonios img {
+    display:flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+}
+
+.imgUser{
+    display:flex;
+    align-items:center;
+    justify-content:right;
+}
+.imgUser {
+    grid-area:image;
+}
+
+.dataUser {
+    grid-area:data;
+}
+
+.clasificacion {
+    grid-area:clasif;
+}
+
+.comentarios {
+    grid-area:comm;
+    
+}
+
+
+
+
+.cajas{
+    display:grid;
+    justify-self: center;
+    align-self: center;
+    margin:13px;
+    width:100%;
+    grid-template-areas:"image data clasif"
+                        "comm comm comm"; 
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    background-color:white;
+    cursor:pointer;
+    text-align:center;
+}
+.cajas{
+    
+    width: 90%; /*Si pongo un num >, me salta el scroll bar horizontal*/
+    height:85%;
+    margin-left:-25px;
+    
+}
+.dataUser {
+    display:grid;
+    grid-template-rows:repeat(2,1fr);
+    align-items: center;
+    justify-self: center;
+    
+}
+.contenidoTestimonios strong{
+    font-size: 1.3rem;
+}
+
+.contenidoTestimonios span {
+    color:#979797;
+    font-size:1.1rem;
+}
+
+.clasificacion {
+    display:flex;
+    color: #f9d71c;
+    align-items:center;
+    justify-content:left;
+}
+
+/*************FOOTER************/
+
+.premios {
+    grid-area:premios;
+}
+.caja1 {
+    grid-area:caja1;
+}
+
+.caja1b {
+    grid-area:caja1b;
+}
+.caja2 {
+    grid-area:caja2;
+}
+.caja3 {
+    grid-area:caja3;
+}
+
+
+#pieContenedor{
+    display: grid;
+    background-color: black;
+    color:white;
+    width:100%;
+    height:90px;
+    justify-self: center;
+    align-self: center;
+    border:1px solid black;
+    grid-template-areas:
+    "caja1 caja1b premios caja2"
+    "caja1 caja1b premios caja3";
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+    grid-template-rows:1fr 1fr;
+    grid-column-gap:1em;
+    
+}
+.premios{
+    display:flex;
+    justify-content: left;
+    align-items: center;
+    
+    filter:invert(100);
+}
+.premio1{
+    width:130px;
+}
+
+.premio2{
+    width:95px;
+}
+
+.caja1 {
+    display:flex;
+    justify-content:center;
+    align-items: center; 
+    height:33%
+    margin-bottom 
+}
+.caja1 img{
+    width:80px;
+}
+.caja1b {
+    display:flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.caja2{
+    display:flex;
+    justify-content:start;
+    align-items: start;
+    height:10%;
+    font-size: 0.8rem;
+}
+
+.caja3{
+    display:flex;
+    justify-content:start;
+    align-items: start;
+    height:33%;
+    font-size: 0.8rem;
+}
+
+/**************Derechos******************/
+#derechos {
+    width:100%;
+    height:3%;
+    
+}
+#derechos p{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding: 2px 20px;
+    text-align:left;
+    background-color: #0a6ac4;
+    color:white;
+}
+
+
+
+/* Tablets */
+/*-------------
+TABLETS Break Points
+600.px
+768.px y 1023.px
+1024.px
+-------------*/
+@media screen and (min-width:600px) and (max-width:768px) {
+    body{
+        background:white;
+    }
+
+    /***********MENU*********/
+
+    nav {
+        display:flex;
+        flex-wrap:nowrap;
+        background: black;
+        
+    }
+
+    .enlace h1 {
+        color:white;
+        font-size: 2rem;
+    }
+    
+    nav ul li a{ /*estas opciones son de los enlaces del menu */
+        color:white;
+        font-size: 14px;
+        padding:5px 5px;
+        text-transform: uppercase;
+    }
+    
+    
+    
+    
+    /***********PORTADA*********/
+    #principal {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        height:auto;
+        background-image: url(./images/invierno1.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin-bottom:10px;
+    }
+    
+    .principalFlex{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:70%;
+        height:90%;
+        border-radius:2%;
+        box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.50);
+        padding: 36px;
+        margin: 15px;
+        cursor: pointer;
+        color:white;
+        flex-wrap:wrap;
+    }
+    .principalFlex p{
+        margin:10px 0px;
+    }
+    
+    /*  TOP EXCURSIONES  */
+    
+    /* TITULO  */
+    #excursiones h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height:11vh;;
+        font-size: 2.9rem;
+        font-weight: 2.5;
+        background-color: #202020;
+        color:white;
+        padding: 10px 20px;
+    }
+    
+    #contenidoExcursiones {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+        width:100%;
+        height:100%;
+        box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        cursor: pointer;   
+    }
+    #contenidoExcursiones img{
+        width: 50%;
+        height: 70%;
+        object-fit: center;
+        overflow: hidden;
+        margin:auto;
+        border: 0.5px solid black;
+        margin-top:10px;
+    }
+    
+    #contenidoExcursiones h3 p a{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+        height:30%;
+        border:1px solid green;   
+    }
+    
+    .btn {
+        border-radius: 5px;
+        display:inline-block;
+        padding: 5px 15px;
+        text-decoration: none;
+        margin-top: 15px;
+        text-shadow:  0 1px 0 rgba(201, 53, 70);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+        color:white;
+        background-color: #c9352a; 
+        margin-bottom:10px;
+        
+    }
+    
+    .btn-red:hover{
+        background-color: #a62d24;
+    }
+    
+    .contenedoresExcursiones {
+        display:flex;
+        flex-direction: column;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+        
+        width:100%;
+        height:auto;
+    }
+    
+    
+                                        /* Testimonios */
+    #testimonios h2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height:11vh;
+        font-size: 2.9rem;
+        font-weight: 2.5;
+        background-color: #202020;
+        color:white;
+        padding: 10px 20px;
+    }
+    
+    
+    /*Nombrado áreas*/
+    .imgUser {
+        grid-area:image;
+    }
+    
+    .dataUser {
+        grid-area:data;
+    }
+    
+    .clasificacion {
+        grid-area:clasif;
+    }
+    
+    .comentarios {
+        grid-area:comm;
+        
+        
+    }
+    
+    .comentarios p {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    .contenidoTestimonios img {
+        display:flex;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        
+    }
+    
+    .imgUser{
+        display:flex;
+        align-items:center;
+        justify-content:right;
+    }
+    
+    .dataUser {
+        display:grid;
+        grid-template-rows:repeat(2,1fr);
+        align-items: center;
+        justify-self: center;
+        
+    }
+    .contenidoTestimonios strong{
+        font-size: 1.3rem;
+    }
+    
+    .contenidoTestimonios span {
+        color:#979797;
+        font-size:1.1rem;
+    }
+    
+    .clasificacion {
+        display:flex;
+        color: #f9d71c;
+        align-items:center;
+        justify-content:left; 
+    }
+    
+/*****FOOTER*****/
+.caja1b {
+    font-size:0.9rem;
+}
+
+.caja2 {
+    font-size:0.8rem;
+}
+
+.caja3 {
+    font-size:0.8rem;
+}
+
+}
+
+
+
+/* Smartphone */
+/*-------------
+CELULARES Break Points
+320.px
+480.px
+-------------*/
+
+@media screen and (max-width:480px) {
+    body{
+        
+        background:white;
+        width:100%;
+        
+    }
+
+    nav {
+        justify-content: flex-start;
+    }
+    .drawer {
+        display:block;
+    }
+    nav h1{
+        margin-left: 2.5rem;
+    }
+    ul{  /*etiqueta que se desplega*/
+        position:fixed;
+        width:100vw;
+        height:100vh;
+        background-color:black;
+        top:10vh;
+        left:-100%;  /*Esconde el nav*/
+        text-align: left;
+        transition:all .5s;
+        display:flex;
+        flex-direction:column;
+        align-content: stretch;
+        padding-top:1rem;
+        
+    }
+    nav ul li {
+        padding:1rem 0;
+        display:flex;
+        flex-direction:column;
+        padding-left:2rem;
+        border-bottom:solid .1rem rgba(201, 196, 196, 0.4);
+        border-top:solid .1rem rgba(201, 196, 196, 0.4);
+
+    }
+
+    #ckbox:checked ~ .lista_menu{
+        left:0;
+    }
+
+
+    /*************************************CAMBIAR Lo que se vea mal*********************************************************/
+    /***********PORTADA*********/
+    #principal {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        height:100%;
+        background-image: url(./images/invierno1.jpg);
+        
+        background-size: 100%;
+        margin-bottom:10px;
+        
+    }
+    
+    .principalFlex{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        height:90%;
+        border-radius:2%;
+        box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.50);
+        padding: 36px;
+        margin: 15px;
+        cursor: pointer;
+        color:white;
+        flex-wrap:wrap;
+    }
+    .principalFlex p{
+        display:none;
+    }
+    .principalFlex h1{
+        text-align:center;
+        padding:5px 0;
+        margin-bottom:5px 0;
+    }
+
+    /***********TOP EXCURSIONES******************/
+    
+    /* TITULO  */
+    #excursiones h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height:3.5rem;
+        font-weight: 2.5;
+        background-color: #202020;
+        color:white;
+        padding: 10px 20px;
+    }
+    
+    #contenidoExcursiones {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+        width:100%;
+        height:auto;
+        box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        cursor: pointer;   
+    }
+    #contenidoExcursiones img{
+        width: 100%;
+        height: auto;
+        object-fit: center;
+        overflow: hidden;
+        margin:10px auto;
+        border: 0.5px solid black;
+        margin-top:10px;
+    }
+    
+    #contenidoExcursiones h3 p a{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+        height:30%;
+        border:1px solid green;   
+    }
+    
+    .btn {
+        border-radius: 5px;
+        display:inline-block;
+        padding: 5px 15px;
+        text-decoration: none;
+        margin-top: 15px;
+        text-shadow:  0 1px 0 rgba(201, 53, 70);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+        color:white;
+        background-color: #c9352a; 
+        margin-bottom:10px;
+        
+    }
+    
+    .btn-red:hover{
+        background-color: #a62d24;
+    }
+    
+    .contenedoresExcursiones {
+        display:flex;
+        flex-direction: column;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        align-items:center;
+        
+        width:100%;
+        height:auto;
+    }
+    
+    
+/***********************Testimonios***********************/
+    #testimonios h2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height:3.5rem;
+        font-size: 2.9rem;
+        font-weight: 2.5;
+        background-color: #202020;
+        color:white;
+        padding: 10px 20px;
+    }
+    
+    
+    /*Nombrado áreas*/
+    .imgUser {
+        grid-area:image;
+    }
+    
+    .dataUser {
+        grid-area:data;
+    }
+    
+    .clasificacion {
+        grid-area:clasif;
+    }
+    
+    .comentarios {
+        grid-area:comm;
+        
+        
+    }
+    
+    .comentarios p {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    /**************************************/
+
+#cajaMacri {
+    grid-area:cajaMacri;
+}
+#cajaCristina {
+    grid-area:cajaCristina;
+}
+#cajaAlberto {
+    grid-area:cajaAlberto;
+}
+#cajaBarney {
+    grid-area:cajaBarney;
+}
+
+.contenidoTestimonios{ /*Genera que se visualice en grilla de 3x1*/
+    display:grid;
+    justify-self: center;
+    align-self: center;
+    width:100vw;
+    height:100%;
+    margin:0 20px;
+    grid-template-areas:"cajaMacri"
+                        "cajaCristina"
+                        "cajaAlberto"
+                        "cajaBarney";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-row-gap:1em;
+    
+}
+    
+    
+    .cajas {
+        display:grid;
+        justify-self: center;
+        width:100%;
+        border:1px solid black;
+        grid-template-areas: "image data clasif"
+                             "comm comm comm";
+        grid-template-columns:1fr 1fr 1fr;
+        grid-template-rows:1fr 1fr;
+        grid-column-gap:1em;
+        grid-row-gap:1em;
+    }
+    
+    
+    
+    .contenidoTestimonios img {
+        display:flex;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        
+    }
+    
+    .imgUser{
+        display:flex;
+        align-items:center;
+        justify-content:right;
+    }
+    
+    .dataUser {
+        display:grid;
+        grid-template-rows:repeat(2,1fr);
+        align-items: center;
+        justify-self: center;
+        
+    }
+    .contenidoTestimonios strong{
+        font-size: 1.3rem;
+    }
+    
+    .contenidoTestimonios span {
+        color:#979797;
+        font-size:1.1rem;
+    }
+    
+    .clasificacion {
+        display:flex;
+        color: #f9d71c;
+        align-items:center;
+        justify-content:left; 
+    }
+
+/****************FOOOTER**********************/
+#pieContenedor{
+    display: grid;
+    background-color: black;
+    color:white;
+    width:100%;
+    height:40vh;
+    justify-self:flex-start;
+    align-self:center;
+    border:1px solid black;
+    grid-template-areas:
+    "caja1 premios premios"
+    "caja1b caja2 caja3";
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    grid-column-gap:1em; 
+}
+
+.premios{
+    filter:invert(100);
+}
+
+.premio1{
+    width:140px;
+    margin-left:-20px;
+}
+
+.premio2{
+    width:95px;
+    margin:0 10px;
+}
+
+.caja1 {
+    height: auto;
+    margin-left:-15px;
+}
+.caja1 img{
+    width:70px;
+}
+    
+.caja1b{
+    font-size:0.6rem;
+    align-self:start;
+    margin:0 10px;
+}
+.caja2{
+    height:5%;
+    font-size: 0.6rem;
+    margin-left:26px;
+}
+
+.caja3{
+    height:10px;
+    font-size: 0.6rem;
+    margin-left:-23px;
+}
+
+
+    /**************Derechos******************/
+    #derechos {
+        width:100%;
+        height:3%;
+    }
+    #derechos p{
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        text-align:left;
+        background-color: #0a6ac4;
+        color:white;
+        font-size:0.55rem;
+    }
+    
+    }
