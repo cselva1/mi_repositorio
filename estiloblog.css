@@ -259,7 +259,7 @@ TABLETS Break Points
 768.px y 1023.px
 1024.px
 -------------*/
-@media screen and (min-width:600px) and (max-width:768px) {
+@media screen and (min-width:427px) and (max-width:768px) {
     body{
         background:white;
     }
